@@ -1,14 +1,14 @@
 === CNN VAN Affliate Dashboard ===
 Developed By: thePlatform for Media, Inc.
-Tags: embedding, video, embed, portal, theplatform, shortcode
+Tags: embedding, video, embed, portal, theplatform, shortcode, cnn, van
 Requires at least: 3.7
 Tested up to: 3.9
 Stable tag: 1.0.0
 
-Manage your content hosted by thePlatform and embed media in WordPress posts.
+Embed content from the CNN Video Affiliate Network.
 
 == Description ==
-View your content hosted by thePlatform for Media and easily embed videos from your library in WordPress posts, modify media metadata, and upload new media.
+View your VAN content and easily embed the CNN Video player into your Wordpress posts
 
 == Installation ==
 Copy the folder "cnn-van-dashboard" with all included files into the "wp-content/plugins" folder of WordPress. Activate the plugin and set your feed id and affiliate name in the plugin settings.
