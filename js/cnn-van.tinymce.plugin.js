@@ -27,7 +27,7 @@ tinymce.PluginManager.add('van', function(editor, url) {
 
             if (tinyMCE.majorVersion > 3) {
                 editor.windowManager.open({
-                    width: 1200,
+                    width: 1220,
                     height: 1024,
                     url: ajaxurl + "?action=van_embed"
                 });             
@@ -35,7 +35,7 @@ tinymce.PluginManager.add('van', function(editor, url) {
             else {
                 if (jQuery("#cnn-embed-dialog").length == 0)
                     jQuery('body').append('<div id="cnn-embed-dialog"></div>');
-                jQuery("#cnn-embed-dialog").html('<iframe src="' + ajaxurl + '?action=van_embed" height="100%" width="100%">').dialog({dialogClass: "wp-dialog", modal: true, resizable: true, minWidth: 1024, width: 1200, height: 1024}).css("overflow-y","hidden");                           
+                jQuery("#cnn-embed-dialog").html('<iframe src="' + ajaxurl + '?action=van_embed" height="100%" width="100%">').dialog({dialogClass: "wp-dialog", modal: true, resizable: true, minWidth: 1024, width: 1220, height: 1024}).css("overflow-y","hidden");                           
             }
             
         }

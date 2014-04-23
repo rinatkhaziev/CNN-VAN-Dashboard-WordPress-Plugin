@@ -21,7 +21,7 @@ jQuery(document).ready(function () {
     vanParams.selectedCategory = '';
     vanParams.feedEndRange = 0;
     vanParams.queryString = ''
-    vanParams.feedQuery = ''
+    vanParams.feedQuery = '?sort=pubDate|desc&byCustomValue={isRawOrFile}{false}'
     if (van_wp_data.feed_pid)
         vanParams.provider = van_wp_data.feed_pid.substring(4).toUpperCase()
     $pdk.bind("player");    
@@ -328,6 +328,11 @@ function getContentFilter(){
 }
 
 function buildCategoryAccordion(resp) {
+     //Start by highlighting the default (all videos)
+    jQuery('.cat-list-selector').each(function(idx, item){
+        jQuery(item).css('background-color','#D8E8FF');
+    });
+
     var entries = resp['entries'];
     for (var idx in entries) {
         var entryTitle = entries[idx]['title'];
