@@ -271,9 +271,7 @@ class VAN_Plugin {
         }
 
         $output = $this->get_embed_shortcode( $id, $width, $autostart, is_feed() );
-        $output = apply_filters( 'van_embed_code', $output );
-
-        return $output;
+        return apply_filters( 'van_embed_code', $output );
     }
 
     /**
