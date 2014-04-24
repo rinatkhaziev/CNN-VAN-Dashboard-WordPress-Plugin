@@ -135,7 +135,7 @@ class VAN_Plugin {
      */
     function add_admin_page() {
         $van_admin_cap = apply_filters( 'van_admin_cap', 'manage_options' );
-        add_plugins_page( 'CNN VAN Settings', 'CNN VAN Settings', $van_admin_cap, 'van-settings', array( $this, 'admin_page' ) );
+        add_options_page( 'CNN VAN Settings', 'CNN VAN Settings', $van_admin_cap, 'van-settings', array( $this, 'admin_page' ) );
     }
 
     /**
