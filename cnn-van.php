@@ -228,14 +228,14 @@ class VAN_Plugin {
         $file_array['tmp_name'] = $file;
 
         if ( is_wp_error( $file ) ) {
-            @unlink( $file_array['tmp_name'] );
+            unlink( $file_array['tmp_name'] );
             return false;
         }
 
         $thumbnail_id = media_handle_sideload( $file_array, $post_id );
 
         if ( is_wp_error( $thumbnail_id ) ) {
-            @unlink( $file_array['tmp_name'] );
+            unlink( $file_array['tmp_name'] );
             return false;
         }
 
