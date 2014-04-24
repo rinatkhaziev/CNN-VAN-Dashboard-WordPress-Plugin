@@ -251,7 +251,7 @@ class VAN_Plugin {
             $this->preferences = get_option( $this->preferences_options_key );
         }
 
-        extract( shortcode_atts( array(
+        list( $width, $id, $autostart ) = array_values( shortcode_atts( array(
             'width' =>      '',
             'id' =>         '',
             'autostart' =>  ''
