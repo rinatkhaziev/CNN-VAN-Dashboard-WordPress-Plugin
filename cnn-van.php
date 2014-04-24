@@ -29,7 +29,7 @@ if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
 
-define( 'FEED_URL', apply_filters( 'van_feed_url', 'http://feed.theplatform.com/f/van/' ) );
+define( 'CNN_VAN_FEED_URL', apply_filters( 'van_feed_url', 'http://feed.theplatform.com/f/van/' ) );
 
 /**
  * Main class
@@ -165,7 +165,7 @@ class VAN_Plugin {
             $this->preferences = get_option( $this->preferences_options_key );
         }
 
-        $url = FEED_URL . $this->preferences['van_feed_pid'] . $_POST['url'];
+        $url = CNN_VAN_FEED_URL . $this->preferences['van_feed_pid'] . $_POST['url'];
 
         $response = wp_remote_get( $url );
         echo wp_remote_retrieve_body( $response );
@@ -182,7 +182,7 @@ class VAN_Plugin {
             $this->preferences = get_option( $this->preferences_options_key );
         }
 
-        $url = FEED_URL . $this->preferences['van_feed_pid'] . $_POST['url'];
+        $url = CNN_VAN_FEED_URL . $this->preferences['van_feed_pid'] . $_POST['url'];
         $response = wp_remote_get( $url );
         echo wp_remote_retrieve_body( $response, array( 'timeout' => 50000 ) );
         die();
