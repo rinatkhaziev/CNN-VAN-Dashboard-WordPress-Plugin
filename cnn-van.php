@@ -151,7 +151,7 @@ class VAN_Plugin {
      * @return void
      */
     function embed() {
-        require_once( $this->plugin_dir . 'cnn-van-media-browser.php' );
+        require_once( dirname( __FILE__ ) . '/cnn-van-media-browser.php' );
         die();
     }
 
