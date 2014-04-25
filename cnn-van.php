@@ -208,7 +208,7 @@ class VAN_Plugin {
 
         if ( $thumbnail_id !== FALSE ) {
             set_post_thumbnail( $post_ID, $thumbnail_id );
-            die( _wp_post_thumbnail_html( $thumbnail_id ) );
+            die( _wp_post_thumbnail_html( $thumbnail_id, $post_ID ) );
         }
 
         //TODO: Better error
