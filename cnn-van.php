@@ -202,7 +202,7 @@ class VAN_Plugin {
 
         $post_ID = $_POST['id'];
 
-        $url = isset( $_POST['img'] ) ? esc_attr( $_POST['img'] ) : '';
+        $url = isset( $_POST['img'] ) ? $_POST['img'] : '';
 
         $thumbnail_id = $this->set_thumbnail( $url, $post_ID );
 
