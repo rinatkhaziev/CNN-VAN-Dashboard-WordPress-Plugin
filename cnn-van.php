@@ -288,18 +288,15 @@ class VAN_Plugin {
             $this->preferences = get_option( $this->preferences_options_key );
         }
 
-        $timestamp = esc_attr( rand() );
-        $affiliate_id = esc_attr( $this->preferences['van_affiliate_id'] );
-        $width = esc_attr( $player_width );
-        $video_id = esc_attr( $id );
-        $autoStart = esc_attr( $autoStart );
+        $timestamp = microtime( true );
+        $affiliate_id = $this->preferences['van_affiliate_id'];
 
         if ( $isFeed ) {
-            $url = "http://van.cnn.com/embed/?videoid=" . $video_id . "&affiliate=" . $affiliate_id . "&size=" . $width . "&autostart=" . $autoStart . "&container=cnnvan-" . $timestamp;
-            $html = '<a href="' . esc_url_raw( $url ) . '">Watch Video</a>';
+            $url = "http://van.cnn.com/embed/?videoid=" . esc_attr( $id ) . "&affiliate=" . esc_attr( $affiliate_id ) . "&size=" . (int) $player_width . "&autostart=" . esc_attr( $autoStart ) . "&container=cnnvan-" . esc_attr( $timestamp );
+            $html = '<a href="' . esc_url( $url ) . '">Watch Video</a>';
         } else {
-            $html = "<script type='text/javascript' id='cnnvan-widgetsinglecvp-js' src='http://i.cdn.turner.com/cnn/van/resources/scripts/van-widget-single-cvp.js?container=cnnvan-" . $timestamp . "'></script>";
-            $html .= "<div id='cnnvan-" . $timestamp . "' data-affiliate='" . $affiliate_id . "' data-videoid='" . $video_id . "' data-size='" . $width . "' data-autostart='" . $autoStart . "'></div>";
+            $html = "<script type='text/javascript' id='cnnvan-widgetsinglecvp-js' src='http://i.cdn.turner.com/cnn/van/resources/scripts/van-widget-single-cvp.js?container=cnnvan-" . esc_attr( $timestamp ) . "'></script>";
+            $html .= "<div id='cnnvan-" . esc_attr( $timestamp ) . "' data-affiliate='" . esc_attr( $affiliate_id ) . "' data-videoid='" . esc_attr( $id ) . "' data-size='" . (int) $player_width . "' data-autostart='" . esc_attr( $autoStart ) . "'></div>";
         }
         return $html;
     }
