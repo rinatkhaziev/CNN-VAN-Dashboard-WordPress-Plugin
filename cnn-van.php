@@ -40,18 +40,17 @@ class VAN_Plugin {
 
 	private $preferences;
 	private $preferences_options_key = 'van_preferences_options';
+	private static $instance;
 
 	/**
 	 * Initialize plugin
 	 */
-	function &init() {
-		static $instance = false;
-
-		if ( !$instance ) {
-			$instance = new VAN_Plugin;
+	public static function init() {
+		if ( !isset( self::$instance ) ) {
+			self::$instance = new VAN_Plugin;
 		}
 
-		return $instance;
+		return self::$instance;
 	}
 
 	/**
