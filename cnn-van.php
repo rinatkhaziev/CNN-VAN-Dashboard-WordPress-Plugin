@@ -97,7 +97,7 @@ class VAN_Plugin {
             if ( $key === 'van_width' || $key === 'van_height' ) {
                 $input[$key] = intval( $value );
             } else {
-                $input[$key] = trim( strval( $value ) );
+                $input[$key] = sanitize_text_field( $value );
             }
         }
         return $input;
