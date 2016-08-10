@@ -17,8 +17,8 @@ Copy the folder "cnn-van-dashboard" with all included files into the "wp-content
 
 == Changelog ==
 
-= 1.0.0 =
-Initial release
+= 2.0.0 =
+Updated for compatability
 
 == Configuration ==
 

@@ -4,12 +4,12 @@
   Plugin Name: CNN VAN Dashboard
   Plugin URI: http://www.theplatform.com/
   Description: Embed videos from the CNN VAN Network
-  Version: 1.0.0
-  Author: thePlatform for Media, Inc.
+  Version: 2.0.0
+  Author: thePlatform for Media, Inc. & GTxcel
   Author URI: http://theplatform.com/
   License: GPL2
 
-  Copyright 2014 thePlatform for Media, Inc.
+  Copyright 2016 thePlatform for Media, Inc.
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License, version 2, as
@@ -135,7 +135,7 @@ class VAN_Plugin {
      */
     function add_admin_page() {
         $van_admin_cap = apply_filters( 'van_admin_cap', 'manage_options' );
-        add_plugins_page( 'CNN VAN Settings', 'CNN VAN Settings', $van_admin_cap, 'van-settings', array( $this, 'admin_page' ) );
+        add_options_page( 'CNN VAN Settings', 'CNN VAN Settings', $van_admin_cap, 'van-settings', array( $this, 'admin_page' ) );
     }
 
     /**
@@ -298,8 +298,8 @@ class VAN_Plugin {
             $url = "http://van.cnn.com/embed/?videoid=" . $video_id . "&affiliate=" . $affiliate_id . "&size=" . $width . "&autostart=" . $autoStart . "&container=cnnvan-" . $timestamp;
             $html = '<a href="' . esc_url_raw( $url ) . '">Watch Video</a>';
         } else {
-            $html = "<script type='text/javascript' id='cnnvan-widgetsinglecvp-js' src='http://i.cdn.turner.com/cnn/van/resources/scripts/van-widget-single-cvp.js?container=cnnvan-" . $timestamp . "'></script>";
-            $html .= "<div id='cnnvan-" . $timestamp . "' data-affiliate='" . $affiliate_id . "' data-videoid='" . $video_id . "' data-size='" . $width . "' data-autostart='" . $autoStart . "'></div>";
+            $html = "<script type='text/javascript' src='http://z.cdn.turner.com/cnn/van/resources/scripts/van-widgets.js'></script>";
+            $html .= "<div data-cnnvansinglewidget data-affiliate='" . $affiliate_id . "' data-videoid='" . $video_id . "' data-size='" . $width . "' data-autostart='" . $autoStart . "'></div>";
         }
         return $html;
     }
